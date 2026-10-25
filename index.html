@@ -1,540 +1,578 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nails by Amanda</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nails by Amanda</title>
 
-<style>
-:root {
-  --site-primary: #b66f7d;
-  --site-secondary: #f6e2e3;
-  --site-background: #fffaf8;
-  --site-on-primary: #ffffff;
-  --site-on-background: #33272a;
-  --site-font-body: Arial, Helvetica, sans-serif;
-  --site-font-heading: Georgia, "Times New Roman", serif;
-}
+  <style>
+    :root {
+      --primary: #b66f7d;
+      --light-pink: #f6e2e3;
+      --background: #fffaf8;
+      --text: #33272a;
+      --heading: Georgia, "Times New Roman", serif;
+      --body: Arial, Helvetica, sans-serif;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  font-family: var(--site-font-body);
-  color: var(--site-on-background);
-  background: var(--site-background);
-  line-height: 1.6;
-}
+    body {
+      margin: 0;
+      font-family: var(--body);
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.6;
+    }
 
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 18px clamp(18px, 6vw, 80px);
-  background: #fffdfc;
-  border-bottom: 1px solid #f0dddd;
-  position: sticky;
-  top: 0;
-  z-index: 3;
-}
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px clamp(18px, 6vw, 80px);
+      background: #fffdfc;
+      border-bottom: 1px solid #f0dddd;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-.brand {
-  font-family: var(--site-font-heading);
-  font-size: clamp(22px, 3vw, 30px);
-  font-style: italic;
-  color: var(--site-primary);
-  line-height: 1.1;
-}
+    .brand {
+      font-family: var(--heading);
+      font-size: clamp(22px, 3vw, 30px);
+      font-style: italic;
+      color: var(--primary);
+      line-height: 1.1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
 
-nav {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-nav a {
-  font-size: 13px;
-  color: inherit;
-  text-decoration: none;
-}
+    nav a {
+      font-size: 13px;
+      color: inherit;
+      text-decoration: none;
+    }
 
-nav a:hover {
-  color: var(--site-primary);
-}
+    nav a:hover {
+      color: var(--primary);
+    }
 
-.btn {
-  display: inline-block;
-  border: 0;
-  border-radius: 999px;
-  padding: 12px 20px;
-  background: var(--site-primary);
-  color: var(--site-on-primary);
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 14px;
-  cursor: pointer;
-}
+    .btn {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
 
-.btn:hover {
-  background: #985765;
-}
+    .btn:hover {
+      background: #985765;
+    }
 
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 28px;
-  padding: clamp(35px, 6vw, 80px) clamp(20px, 8vw, 110px);
-  background: linear-gradient(120deg, #f9e8e7, #fff8f5 68%, #f1d9db);
-  overflow: hidden;
-}
+    /* LANDING PAGE */
+    .hero {
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      padding: 70px clamp(20px, 8vw, 110px);
+      position: relative;
+      overflow: hidden;
 
-.eyebrow {
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: bold;
-  color: #81505a;
-}
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(255, 244, 243, 0.94) 0%,
+          rgba(255, 244, 243, 0.78) 38%,
+          rgba(255, 244, 243, 0.18) 70%,
+          rgba(255, 244, 243, 0.03) 100%
+        ),
+        url("landing-bg.png");
 
-.hero h1 {
-  font: normal clamp(38px, 5.5vw, 68px)/1.05 var(--site-font-heading);
-  margin: 12px 0 18px;
-  max-width: 540px;
-  color: #302326;
-}
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
 
-.hero p {
-  max-width: 400px;
-  color: #665256;
-  margin: 0 0 24px;
-}
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 510px;
+    }
 
-.hero-art {
-  min-height: 270px;
-  border-radius: 48% 48% 24px 24px;
-  background:
-    radial-gradient(ellipse at 55% 35%, #fffaf9 0 14%, transparent 15%),
-    linear-gradient(145deg, #e5b6b7, #f8dedd 45%, #c98791);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-}
+    .eyebrow {
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: bold;
+      color: #81505a;
+    }
 
-.hand {
-  font-size: clamp(90px, 15vw, 170px);
-  filter: drop-shadow(0 12px 10px #9e647333);
-  transform: rotate(-12deg);
-}
+    .hero h1 {
+      font: normal clamp(42px, 5.5vw, 68px)/1.05 var(--heading);
+      margin: 12px 0 18px;
+      color: #302326;
+    }
 
-.hero-art::after {
-  content: "Nails by Amanda ♡";
-  position: absolute;
-  bottom: 18px;
-  right: 20px;
-  color: #fff8f7;
-  font: italic 20px var(--site-font-heading);
-}
+    .hero p {
+      max-width: 400px;
+      color: #594449;
+      margin: 0 0 24px;
+    }
 
-section {
-  padding: 55px clamp(18px, 6vw, 80px);
-}
+    section {
+      padding: 55px clamp(18px, 6vw, 80px);
+      scroll-margin-top: 85px;
+    }
 
-.section-head {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    .section-head {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.section-head .eyebrow {
-  font-size: 10px;
-}
+    .section-head .eyebrow {
+      font-size: 10px;
+    }
 
-.section-head h2 {
-  font: normal clamp(30px, 4vw, 42px) var(--site-font-heading);
-  margin: 5px 0;
-  color: #4a3035;
-}
+    .section-head h2,
+    .about h2 {
+      font: normal clamp(30px, 4vw, 42px) var(--heading);
+      margin: 5px 0;
+      color: #4a3035;
+    }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  max-width: 1000px;
-  margin: auto;
-}
+    .section-head p {
+      color: #76666a;
+    }
 
-.service {
-  background: #fff;
-  border: 1px solid #f0dddd;
-  border-radius: 18px;
-  padding: 22px;
-  text-align: center;
-  min-width: 0;
-}
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-.service .symbol {
-  font-size: 30px;
-  color: var(--site-primary);
-}
+    .service {
+      background: white;
+      border: 1px solid #f0dddd;
+      border-radius: 18px;
+      padding: 22px;
+      text-align: center;
+      min-width: 0;
+    }
 
-.service h3 {
-  font-size: 16px;
-  margin: 7px 0;
-}
+    .service .symbol {
+      font-size: 30px;
+      color: var(--primary);
+    }
 
-.service p {
-  font-size: 13px;
-  color: #76666a;
-  margin: 0 0 10px;
-}
+    .service h3 {
+      font-size: 16px;
+      margin: 7px 0;
+    }
 
-.price {
-  font-weight: bold;
-  color: #8f4e5c;
-}
+    .service p {
+      font-size: 13px;
+      color: #76666a;
+      margin: 0 0 10px;
+    }
 
-.service-link {
-  display: block;
-  color: inherit;
-  text-decoration: none;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+    .price {
+      font-weight: bold;
+      color: #8f4e5c;
+      font-size: 13px;
+    }
 
-.service-link:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px #b66f7d25;
-  border-color: var(--site-primary);
-}
+    .service-link {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-.service-link .view-designs {
-  color: var(--site-primary);
-  font-size: 13px;
-  font-weight: bold;
-  margin-top: 12px;
-  margin-bottom: 0;
-}
+    .service-link:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px #b66f7d25;
+      border-color: var(--primary);
+    }
 
-.about {
-  background: #faeeee;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 35px;
-  align-items: center;
-}
+    .view-designs {
+      color: var(--primary) !important;
+      font-size: 13px !important;
+      font-weight: bold;
+      margin-top: 12px !important;
+      margin-bottom: 0 !important;
+    }
 
-.about-art {
-  min-height: 230px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, #ead0c8, #f7e6e1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 75px;
-}
+    .note {
+      font-size: 12px;
+      color: #856e72;
+      text-align: center;
+      margin-top: 16px;
+    }
 
-.about h2 {
-  font: normal 36px var(--site-font-heading);
-  margin: 5px 0 12px;
-}
+    /* ABOUT */
+    .about {
+      background: #faeeee;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 35px;
+      align-items: center;
+    }
 
-.about p {
-  color: #6d575c;
-  max-width: 600px;
-}
+    .about-art {
+      min-height: 230px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #ead0c8, #f7e6e1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 75px;
+    }
 
-.pills {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
+    .about p {
+      color: #6d575c;
+      max-width: 600px;
+    }
 
-.pill {
-  border: 1px solid #e6c7ca;
-  background: #fff9f8;
-  border-radius: 999px;
-  padding: 8px 12px;
-  font-size: 12px;
-}
+    .pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
+    .pill {
+      border: 1px solid #e6c7ca;
+      background: #fff9f8;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+    }
 
-.gallery-item {
-  min-height: 160px;
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  background: linear-gradient(135deg, #f4d9d8, #fff6f3);
-  border: 1px solid #f0dddd;
-}
+    /* GALLERY */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
 
-.gallery-item:nth-child(2) {
-  background: linear-gradient(135deg, #e6c3c7, #f8e8e6);
-}
+    .gallery-item {
+      min-height: 160px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      background: linear-gradient(135deg, #f4d9d8, #fff6f3);
+      border: 1px solid #f0dddd;
+    }
 
-.gallery-item:nth-child(3) {
-  background: linear-gradient(135deg, #f8e9e4, #e9c6c8);
-}
+    .gallery-item:nth-child(2) {
+      background: linear-gradient(135deg, #e6c3c7, #f8e8e6);
+    }
 
-.contact {
-  text-align: center;
-  background: #f8e8e7;
-}
+    .gallery-item:nth-child(3) {
+      background: linear-gradient(135deg, #f8e9e4, #e9c6c8);
+    }
 
-.contact p {
-  color: #6d575c;
-}
+    /* CONTACT */
+    .contact {
+      text-align: center;
+      background: #f8e8e7;
+    }
 
-.contact .btn {
-  margin: 8px 4px;
-}
+    .contact h2 {
+      font: normal 36px var(--heading);
+      margin: 8px 0;
+    }
 
-footer {
-  text-align: center;
-  padding: 22px;
-  font-size: 12px;
-  color: #80666b;
-  background: #fffaf8;
-}
+    .contact p {
+      color: #6d575c;
+    }
 
-.note {
-  font-size: 12px;
-  color: #856e72;
-  text-align: center;
-  margin-top: 16px;
-}
+    .contact .btn {
+      margin: 8px 4px;
+    }
 
-@media (max-width: 650px) {
-  header {
-    padding: 14px 16px;
-    flex-wrap: wrap;
-  }
+    footer {
+      text-align: center;
+      padding: 22px;
+      font-size: 12px;
+      color: #80666b;
+      background: #fffaf8;
+    }
 
-  nav {
-    order: 3;
-    width: 100%;
-    justify-content: space-between;
-    gap: 8px;
-  }
+    /* TABLET AND MOBILE */
+    @media (max-width: 800px) {
+      header {
+        flex-wrap: wrap;
+        padding: 14px 18px;
+      }
 
-  nav a {
-    font-size: 12px;
-  }
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+      }
 
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 36px 22px;
-  }
+      nav a {
+        font-size: 12px;
+      }
 
-  .hero-art {
-    min-height: 190px;
-  }
+      .hero {
+        min-height: 500px;
+        padding: 55px 28px;
+        background-position: center;
+      }
 
-  .services {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+      .services {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
 
-  .about {
-    grid-template-columns: 1fr;
-  }
+      .about {
+        grid-template-columns: 1fr;
+      }
 
-  .about-art {
-    min-height: 150px;
-  }
+      .about-art {
+        min-height: 160px;
+      }
+    }
 
-  .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+    @media (max-width: 480px) {
+      .brand {
+        font-size: 22px;
+      }
 
-  .gallery-item {
-    min-height: 120px;
-  }
-}
+      header > .btn {
+        padding: 10px 13px;
+        font-size: 12px;
+      }
 
-@media (max-width: 380px) {
-  .services {
-    grid-template-columns: 1fr;
-  }
+      .hero {
+        min-height: 480px;
+        padding: 45px 22px;
+        background-position: 58% center;
+      }
 
-  .brand {
-    font-size: 22px;
-  }
+      .hero h1 {
+        font-size: 42px;
+      }
 
-  .btn {
-    padding: 11px 15px;
-  }
-}
-</style>
+      .hero p {
+        max-width: 300px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-item {
+        min-height: 120px;
+      }
+
+      .contact h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <a href="#home" style="text-decoration:none">
-    <div class="brand">Nails by Amanda ♡</div>
-  </a>
+  <header>
+    <a href="#home" class="brand">Nails by Amanda ♡</a>
 
-  <nav aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <a class="btn" href="#contact">Book Now ♡</a>
-</header>
+    <a class="btn" href="#contact">Book Now ♡</a>
+  </header>
 
-<main>
+  <main>
 
-<section class="hero" id="home">
-  <div>
-    <div class="eyebrow">Clean · Pretty · Long-lasting</div>
-    <h1>Nails that make you feel good.</h1>
-    <p>Pretty nails, thoughtful care, and designs made just for you. Let’s make your next nail set special. ♡</p>
-    <a class="btn" href="#contact">Book an Appointment ↗</a>
-  </div>
+    <!-- LANDING PAGE -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Clean · Pretty · Long-lasting</div>
 
-  <div class="hero-art" role="img" aria-label="Blush pink manicure inspired artwork">
-    <div class="hand">💅🏻</div>
-  </div>
-</section>
+        <h1>Nails that make you feel good.</h1>
 
-<section id="services">
-  <div class="section-head">
-    <div class="eyebrow">A little self-care</div>
-    <h2>Our Nail Services ♡</h2>
-    <p>Choose your favorite service and message to ask about availability.</p>
-  </div>
+        <p>
+          Pretty nails, thoughtful care, and designs made just for you.
+          Let’s make your next nail set special. ♡
+        </p>
 
-  <div class="services">
+        <a class="btn" href="#contact">
+          Book an Appointment ↗
+        </a>
+      </div>
+    </section>
 
-    <a href="gel-manicure.html" class="service service-link">
-      <div class="symbol">♡</div>
-      <h3>Gel Manicure</h3>
-      <p>Neat nails with a glossy, long-lasting finish.</p>
-      <div class="price">Price upon inquiry</div>
-      <p class="view-designs">View Designs →</p>
-    </a>
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-head">
+        <div class="eyebrow">A little self-care</div>
+        <h2>Our Nail Services ♡</h2>
+        <p>Choose your favorite service and message to ask about availability.</p>
+      </div>
 
-    <a href="hardgel-pedicure.html" class="service service-link">
-      <div class="symbol">✧</div>
-      <h3>Hardgel/Gel Pedicure</h3>
-      <p>A fresh, polished look for your toes.</p>
-      <div class="price">Price upon inquiry</div>
-      <p class="view-designs">View Designs →</p>
-    </a>
+      <div class="services">
 
-    <a href="soft-gel-ext.html" class="service service-link">
-      <div class="symbol">✿</div>
-      <h3>Soft Gel Extensions</h3>
-      <p>Extra length for your dream nail set.</p>
-      <div class="price">Price upon inquiry</div>
-      <p class="view-designs">View Designs →</p>
-    </a>
+        <a href="gel-manicure.html" class="service service-link">
+          <div class="symbol">♡</div>
+          <h3>Gel Manicure</h3>
+          <p>Neat nails with a glossy, long-lasting finish.</p>
+          <div class="price">Price upon inquiry</div>
+          <p class="view-designs">View Designs →</p>
+        </a>
 
-     <a href="hard-gel-manicure.html" class="service service-link">
-      <div class="symbol">✧</div>
-      <h3>Hard Gel Manicure</h3>
-      <p>From simple details to cute statement designs.</p>
-      <div class="price">Price upon inquiry</div>
-       <p class="view-designs">View Designs →</p>
-    </a>
+        <a href="hardgel-pedicure.html" class="service service-link">
+          <div class="symbol">✧</div>
+          <h3>Hardgel/Gel Pedicure</h3>
+          <p>A fresh, polished look for your toes.</p>
+          <div class="price">Price upon inquiry</div>
+          <p class="view-designs">View Designs →</p>
+        </a>
 
-    <article class="service">
-      <div class="symbol">♡</div>
-      <h3>Nail Removal</h3>
-      <p>Ask about repair options for a chipped or broken nail.</p>
-      <div class="price">Price upon inquiry</div>
-    </article>
+        <a href="soft-gel-ext.html" class="service service-link">
+          <div class="symbol">✿</div>
+          <h3>Soft Gel Extensions</h3>
+          <p>Extra length for your dream nail set.</p>
+          <div class="price">Price upon inquiry</div>
+          <p class="view-designs">View Designs →</p>
+        </a>
 
-    <article class="service">
-      <div class="symbol">＋</div>
-      <h3>Custom Set</h3>
-      <p>Have an inspiration photo? Send it to Amanda.</p>
-      <div class="price">Message for a quote</div>
-    </article>
+        <a href="hard-gel-manicure.html" class="service service-link">
+          <div class="symbol">✧</div>
+          <h3>Hard Gel Manicure</h3>
+          <p>From simple details to cute statement designs.</p>
+          <div class="price">Price upon inquiry</div>
+          <p class="view-designs">View Designs →</p>
+        </a>
 
-  </div>
+        <article class="service">
+          <div class="symbol">♡</div>
+          <h3>Nail Removal</h3>
+          <p>Ask about repair options for a chipped or broken nail.</p>
+          <div class="price">Price upon inquiry</div>
+        </article>
 
-  <p class="note">Service list and prices can be edited to match your actual menu.</p>
-</section>
+        <article class="service">
+          <div class="symbol">＋</div>
+          <h3>Custom Set</h3>
+          <p>Have an inspiration photo? Send it to Amanda.</p>
+          <div class="price">Message for a quote</div>
+        </article>
 
-<section class="about" id="about">
-  <div class="about-art" aria-label="Nail polish and manicure tools">
-    💗 💅🏻
-  </div>
+      </div>
 
-  <div>
-    <div class="eyebrow">Meet your nail tech</div>
-    <h2>Hi, I’m Amanda ♡</h2>
-    <p>Just a girl who loves making nails pretty. ♡ Welcome to my little nail corner, where every set is made with love and care.</p>
+      <p class="note">
+        Service list and prices can be edited to match your actual menu.
+      </p>
+    </section>
 
-    <div class="pills">
-      <span class="pill">♡ Careful service</span>
-      <span class="pill">✧ Pretty details</span>
-      <span class="pill">♡ Your style, your nails</span>
-    </div>
-  </div>
-</section>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="about-art" aria-label="Nail polish and manicure tools">
+        💗 💅🏻
+      </div>
 
-<section id="gallery">
-  <div class="section-head">
-    <div class="eyebrow">Nail inspo</div>
-    <h2>Gallery ♡</h2>
-    <p>Replace these sample tiles with photos of your own nail work.</p>
-  </div>
+      <div>
+        <div class="eyebrow">Meet your nail tech</div>
+        <h2>Hi, I’m Amanda ♡</h2>
 
-  <div class="gallery">
-    <div class="gallery-item">💅🏻</div>
-    <div class="gallery-item">🌸</div>
-    <div class="gallery-item">✨</div>
-    <div class="gallery-item">💗</div>
-    <div class="gallery-item">🤍</div>
-    <div class="gallery-item">🎀</div>
-  </div>
-</section>
+        <p>
+          Just a girl who loves making nails pretty. ♡ Welcome to my
+          little nail corner, where every set is made with love and care.
+        </p>
 
-<section class="contact" id="contact">
-  <div class="eyebrow">Your next set awaits</div>
-  <h2 style="font:normal 36px Georgia,serif;margin:8px 0">
-    Let’s get your nails done ♡
-  </h2>
+        <div class="pills">
+          <span class="pill">♡ Careful service</span>
+          <span class="pill">✧ Pretty details</span>
+          <span class="pill">♡ Your style, your nails</span>
+        </div>
+      </div>
+    </section>
 
-  <p>Message me on Facebook to ask about services, prices, and available appointments.</p>
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-head">
+        <div class="eyebrow">Nail inspo</div>
+        <h2>Gallery ♡</h2>
+        <p>Replace these sample tiles with photos of your own nail work.</p>
+      </div>
 
-  <a class="btn"
-     href="https://www.facebook.com/p/Nails-by-Amanda-61579506603779/"
-     target="_blank"
-     rel="noopener">
-    Visit Facebook Page ↗
-  </a>
+      <div class="gallery">
+        <div class="gallery-item">💅🏻</div>
+        <div class="gallery-item">🌸</div>
+        <div class="gallery-item">✨</div>
+        <div class="gallery-item">💗</div>
+        <div class="gallery-item">🤍</div>
+        <div class="gallery-item">🎀</div>
+      </div>
+    </section>
 
-  <p class="note">Contact us on Facebook for inquiries and appointments.</p>
-</section>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="eyebrow">Your next set awaits</div>
 
-</main>
+      <h2>Let’s get your nails done ♡</h2>
 
-<footer>
-  Nails by Amanda ♡<br>
-  Pretty nails, happy you.
-</footer>
+      <p>
+        Message me on Facebook to ask about services, prices,
+        and available appointments.
+      </p>
+
+      <a
+        class="btn"
+        href="https://www.facebook.com/p/Nails-by-Amanda-61579506603779/"
+        target="_blank"
+        rel="noopener"
+      >
+        Visit Facebook Page ↗
+      </a>
+
+      <p class="note">
+        Contact us on Facebook for inquiries and appointments.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    Nails by Amanda ♡<br>
+    Pretty nails, happy you.
+  </footer>
 
 </body>
 </html>
