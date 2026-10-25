@@ -1,75 +1,545 @@
+
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AG Glam Nails | Nails by Amanda </title>
+<title>AG Glam Nails | Nails by Amanda</title>
+
 <style>
-:root{--site-primary:#b66f7d;--site-secondary:#f6e2e3;--site-background:#fffaf8;--site-on-primary:#ffffff;--site-on-secondary:#4a2930;--site-on-background:#33272a;--site-font-body:Arial,Helvetica,sans-serif;--site-font-heading:Georgia,'Times New Roman',serif;--site-heading-scale:1;--site-spacing-scale:1;--site-radius-scale:1;--site-decoration-opacity:1}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--site-font-body);color:var(--site-on-background);background:var(--site-background);line-height:1.6}
-#app{background-color:var(--site-background);color:var(--site-on-background);min-height:100vh;border-radius:0}
-header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:18px clamp(18px,6vw,80px);background:#fffdfc;border-bottom:1px solid #f0dddd;position:sticky;top:0;z-index:3}
-.brand{font-family:var(--site-font-heading);font-size:clamp(22px,3vw,30px);font-style:italic;color:var(--site-primary);line-height:1.1}.brand small{display:block;font:10px var(--site-font-body);letter-spacing:4px;text-align:center;color:#60454a;margin-top:5px}
-nav{display:flex;gap:20px;flex-wrap:wrap}nav a{font-size:13px;color:inherit;text-decoration:none}nav a:hover{color:var(--site-primary)}
-.btn{display:inline-block;border:0;border-radius:999px;padding:12px 20px;background:var(--site-primary);color:var(--site-on-primary);font-weight:700;text-decoration:none;font-size:14px;cursor:pointer}.btn.secondary{background:transparent;color:var(--site-primary);border:1px solid var(--site-primary)}
-.hero{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:28px;padding:clamp(35px,6vw,80px) clamp(20px,8vw,110px);background:linear-gradient(120deg,#f9e8e7,#fff8f5 68%,#f1d9db);overflow:hidden}
-.eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:11px;font-weight:bold;color:#81505a}.hero h1{font:normal clamp(38px,5.5vw,68px)/1.05 var(--site-font-heading);margin:12px 0 18px;max-width:540px;color:#302326}.hero p{max-width:400px;color:#665256;margin:0 0 24px}
-.hero-art{min-height:270px;border-radius:48% 48% 24px 24px;background:radial-gradient(ellipse at 55% 35%,#fffaf9 0 14%,transparent 15%),linear-gradient(145deg,#e5b6b7,#f8dedd 45%,#c98791);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-.hand{font-size:clamp(90px,15vw,170px);filter:drop-shadow(0 12px 10px #9e647333);transform:rotate(-12deg)}.hero-art:after{content:"AG ♡";position:absolute;bottom:18px;right:20px;color:#fff8f7;font:italic 24px var(--site-font-heading)}
-section{padding:55px clamp(18px,6vw,80px)}.section-head{text-align:center;margin-bottom:30px}.section-head .eyebrow{font-size:10px}.section-head h2{font:normal clamp(30px,4vw,42px) var(--site-font-heading);margin:5px 0;color:#4a3035}
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:auto}.service{background:#fff;border:1px solid #f0dddd;border-radius:18px;padding:22px;text-align:center}.service .symbol{font-size:30px;color:var(--site-primary)}.service h3{font-size:16px;margin:7px 0}.service p{font-size:13px;color:#76666a;margin:0 0 10px}.price{font-weight:bold;color:#8f4e5c}
-.about{background:#faeeee;display:grid;grid-template-columns:.9fr 1.1fr;gap:35px;align-items:center}.about-art{min-height:230px;border-radius:22px;background:linear-gradient(135deg,#ead0c8,#f7e6e1);display:flex;align-items:center;justify-content:center;font-size:75px}.about h2{font:normal 36px var(--site-font-heading);margin:5px 0 12px}.about p{color:#6d575c;max-width:600px}.pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.pill{border:1px solid #e6c7ca;background:#fff9f8;border-radius:999px;padding:8px 12px;font-size:12px}
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.gallery-item{min-height:160px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:48px;background:linear-gradient(135deg,#f4d9d8,#fff6f3);border:1px solid #f0dddd}.gallery-item:nth-child(2){background:linear-gradient(135deg,#e6c3c7,#f8e8e6)}.gallery-item:nth-child(3){background:linear-gradient(135deg,#f8e9e4,#e9c6c8)}
-.contact{text-align:center;background:#f8e8e7}.contact p{color:#6d575c}.contact .btn{margin:8px 4px}footer{text-align:center;padding:22px;font-size:12px;color:#80666b;background:#fffaf8}
-.note{font-size:12px;color:#856e72;text-align:center;margin-top:16px}
-@media(max-width:650px){header{padding:14px 16px;flex-wrap:wrap}nav{order:3;width:100%;justify-content:space-between;gap:8px}nav a{font-size:12px}.hero{grid-template-columns:1fr;padding:36px 22px}.hero-art{min-height:190px}.services{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr}.about-art{min-height:150px}.gallery{grid-template-columns:1fr 1fr}.gallery-item{min-height:120px}}
-@media(max-width:380px){.services{grid-template-columns:1fr}.brand{font-size:22px}.btn{padding:11px 15px}}
+:root {
+  --site-primary: #b66f7d;
+  --site-secondary: #f6e2e3;
+  --site-background: #fffaf8;
+  --site-on-primary: #ffffff;
+  --site-on-secondary: #4a2930;
+  --site-on-background: #33272a;
+  --site-font-body: Arial, Helvetica, sans-serif;
+  --site-font-heading: Georgia, 'Times New Roman', serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--site-font-body);
+  color: var(--site-on-background);
+  background: var(--site-background);
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px clamp(18px, 6vw, 80px);
+  background: #fffdfc;
+  border-bottom: 1px solid #f0dddd;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.brand {
+  font-family: var(--site-font-heading);
+  font-size: clamp(22px, 3vw, 30px);
+  font-style: italic;
+  color: var(--site-primary);
+  line-height: 1.1;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-size: 13px;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--site-primary);
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: var(--site-primary);
+  color: var(--site-on-primary);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #985765;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: var(--site-primary);
+  border: 1px solid var(--site-primary);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(35px, 6vw, 80px) clamp(20px, 8vw, 110px);
+  background: linear-gradient(120deg, #f9e8e7, #fff8f5 68%, #f1d9db);
+  overflow: hidden;
+}
+
+.eyebrow {
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: bold;
+  color: #81505a;
+}
+
+.hero h1 {
+  font: normal clamp(38px, 5.5vw, 68px)/1.05 var(--site-font-heading);
+  margin: 12px 0 18px;
+  max-width: 540px;
+  color: #302326;
+}
+
+.hero p {
+  max-width: 400px;
+  color: #665256;
+  margin: 0 0 24px;
+}
+
+.hero-art {
+  min-height: 270px;
+  border-radius: 48% 48% 24px 24px;
+  background: radial-gradient(ellipse at 55% 35%, #fffaf9 0 14%, transparent 15%),
+              linear-gradient(145deg, #e5b6b7, #f8dedd 45%, #c98791);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hand {
+  font-size: clamp(90px, 15vw, 170px);
+  filter: drop-shadow(0 12px 10px #9e647333);
+  transform: rotate(-12deg);
+}
+
+.hero-art:after {
+  content: "AG ♡";
+  position: absolute;
+  bottom: 18px;
+  right: 20px;
+  color: #fff8f7;
+  font: italic 24px var(--site-font-heading);
+}
+
+section {
+  padding: 55px clamp(18px, 6vw, 80px);
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-head .eyebrow {
+  font-size: 10px;
+}
+
+.section-head h2 {
+  font: normal clamp(30px, 4vw, 42px) var(--site-font-heading);
+  margin: 5px 0;
+  color: #4a3035;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.service {
+  background: #fff;
+  border: 1px solid #f0dddd;
+  border-radius: 18px;
+  padding: 22px;
+  text-align: center;
+}
+
+.service .symbol {
+  font-size: 30px;
+  color: var(--site-primary);
+}
+
+.service h3 {
+  font-size: 16px;
+  margin: 7px 0;
+}
+
+.service p {
+  font-size: 13px;
+  color: #76666a;
+  margin: 0 0 10px;
+}
+
+.price {
+  font-weight: bold;
+  color: #8f4e5c;
+}
+
+/* Clickable Gel Manicure card */
+.service-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px #b66f7d25;
+  border-color: var(--site-primary);
+}
+
+.service-link .view-designs {
+  color: var(--site-primary);
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+.about {
+  background: #faeeee;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+.about-art {
+  min-height: 230px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ead0c8, #f7e6e1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 75px;
+}
+
+.about h2 {
+  font: normal 36px var(--site-font-heading);
+  margin: 5px 0 12px;
+}
+
+.about p {
+  color: #6d575c;
+  max-width: 600px;
+}
+
+.pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.pill {
+  border: 1px solid #e6c7ca;
+  background: #fff9f8;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery-item {
+  min-height: 160px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  background: linear-gradient(135deg, #f4d9d8, #fff6f3);
+  border: 1px solid #f0dddd;
+}
+
+.gallery-item:nth-child(2) {
+  background: linear-gradient(135deg, #e6c3c7, #f8e8e6);
+}
+
+.gallery-item:nth-child(3) {
+  background: linear-gradient(135deg, #f8e9e4, #e9c6c8);
+}
+
+.contact {
+  text-align: center;
+  background: #f8e8e7;
+}
+
+.contact p {
+  color: #6d575c;
+}
+
+.contact .btn {
+  margin: 8px 4px;
+}
+
+footer {
+  text-align: center;
+  padding: 22px;
+  font-size: 12px;
+  color: #80666b;
+  background: #fffaf8;
+}
+
+.note {
+  font-size: 12px;
+  color: #856e72;
+  text-align: center;
+  margin-top: 16px;
+}
+
+@media (max-width: 650px) {
+  header {
+    padding: 14px 16px;
+    flex-wrap: wrap;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 36px 22px;
+  }
+
+  .hero-art {
+    min-height: 190px;
+  }
+
+  .services {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about-art {
+    min-height: 150px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-item {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 380px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .btn {
+    padding: 11px 15px;
+  }
+}
 </style>
 </head>
+
 <body>
 <div id="app">
+
 <header>
-  <a href="#home" style="text-decoration:none"><div class="brand">Nails by Amanda ♡</div></a>
-  <nav aria-label="Main navigation"><a href="#home">Home</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+  <a href="#home" style="text-decoration:none">
+    <div class="brand">Nails by Amanda ♡</div>
+  </a>
+
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <a class="btn" href="#contact">Book Now ♡</a>
 </header>
+
 <main>
+
 <section class="hero" id="home">
-  <div><div class="eyebrow">Clean · Pretty · Long-lasting</div><h1>Nails that make you feel good.</h1><p>Pretty nails, thoughtful care, and designs made just for you. Let’s make your next nail set special. ♡</p><a class="btn" href="#contact">Book an Appointment ↗</a></div>
-  <div class="hero-art" role="img" aria-label="Blush pink manicure inspired artwork"><div class="hand">💅🏻</div></div>
-</section>
-<section id="services">
-  <div class="section-head"><div class="eyebrow">A little self-care</div><h2>Our Nail Services ♡</h2><p>Choose your favorite service and message to ask about availability.</p></div>
-  <div class="services">
-    <article class="service"><div class="symbol">♡</div><h3>Gel Manicure</h3><p>Neat nails with a glossy, long-lasting finish.</p><div class="price">Price upon inquiry</div></article>
-    <article class="service"><div class="symbol">✧</div><h3>Hardgel/Gel Pedicure</h3><p>A fresh, polished look for your toes.</p><div class="price">Price upon inquiry</div></article>
-    <article class="service"><div class="symbol">✿</div><h3>Soft Gel Extensions</h3><p>Extra length for your dream nail set.</p><div class="price">Price upon inquiry</div></article>
-    <article class="service"><div class="symbol">✧</div><h3>Hard Gel Manicure</h3><p>From simple details to cute statement designs.</p><div class="price">Price upon inquiry</div></article>
-    <article class="service"><div class="symbol">♡</div><h3>Nail Removal</h3><p>Ask about repair options for a chipped or broken nail.</p><div class="price">Price upon inquiry</div></article>
-    <article class="service"><div class="symbol">＋</div><h3>Custom Set</h3><p>Have an inspiration photo? Send it to Amanda.</p><div class="price">Message for a quote</div></article>
+  <div>
+    <div class="eyebrow">Clean · Pretty · Long-lasting</div>
+    <h1>Nails that make you feel good.</h1>
+    <p>Pretty nails, thoughtful care, and designs made just for you. Let’s make your next nail set special. ♡</p>
+    <a class="btn" href="#contact">Book an Appointment ↗</a>
   </div>
+
+  <div class="hero-art" role="img" aria-label="Blush pink manicure inspired artwork">
+    <div class="hand">💅🏻</div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-head">
+    <div class="eyebrow">A little self-care</div>
+    <h2>Our Nail Services ♡</h2>
+    <p>Choose your favorite service and message to ask about availability.</p>
+  </div>
+
+  <div class="services">
+
+    <a href="gel-manicure.html" class="service service-link">
+      <div class="symbol">♡</div>
+      <h3>Gel Manicure</h3>
+      <p>Neat nails with a glossy, long-lasting finish.</p>
+      <div class="price">Price upon inquiry</div>
+      <p class="view-designs">View Designs →</p>
+    </a>
+
+    <article class="service">
+      <div class="symbol">✧</div>
+      <h3>Hardgel/Gel Pedicure</h3>
+      <p>A fresh, polished look for your toes.</p>
+      <div class="price">Price upon inquiry</div>
+    </article>
+
+    <article class="service">
+      <div class="symbol">✿</div>
+      <h3>Soft Gel Extensions</h3>
+      <p>Extra length for your dream nail set.</p>
+      <div class="price">Price upon inquiry</div>
+    </article>
+
+    <article class="service">
+      <div class="symbol">✧</div>
+      <h3>Hard Gel Manicure</h3>
+      <p>From simple details to cute statement designs.</p>
+      <div class="price">Price upon inquiry</div>
+    </article>
+
+    <article class="service">
+      <div class="symbol">♡</div>
+      <h3>Nail Removal</h3>
+      <p>Ask about repair options for a chipped or broken nail.</p>
+      <div class="price">Price upon inquiry</div>
+    </article>
+
+    <article class="service">
+      <div class="symbol">＋</div>
+      <h3>Custom Set</h3>
+      <p>Have an inspiration photo? Send it to Amanda.</p>
+      <div class="price">Message for a quote</div>
+    </article>
+
+  </div>
+
   <p class="note">Service list and prices can be edited to match your actual menu.</p>
 </section>
+
 <section class="about" id="about">
-  <div class="about-art" aria-label="Nail polish and manicure tools">💗 💅🏻</div>
-  <div><div class="eyebrow">Meet your nail tech</div><h2>Hi, I’m Kikay haha ♡</h2><p>I love helping you express your style through pretty nails. Whether you prefer a clean, simple look or a cute detailed design, let’s find a set that feels like you.</p><div class="pills"><span class="pill">♡ Careful service</span><span class="pill">✧ Pretty details</span><span class="pill">♡ Your style, your nails</span></div></div>
+  <div class="about-art" aria-label="Nail polish and manicure tools">
+    💗 💅🏻
+  </div>
+
+  <div>
+    <div class="eyebrow">Meet your nail tech</div>
+    <h2>Hi, I’m Kikay haha ♡</h2>
+    <p>I love helping you express your style through pretty nails. Whether you prefer a clean, simple look or a cute detailed design, let’s find a set that feels like you.</p>
+
+    <div class="pills">
+      <span class="pill">♡ Careful service</span>
+      <span class="pill">✧ Pretty details</span>
+      <span class="pill">♡ Your style, your nails</span>
+    </div>
+  </div>
 </section>
+
 <section id="gallery">
-  <div class="section-head"><div class="eyebrow">Nail inspo</div><h2>Gallery ♡</h2><p>Replace these sample tiles with photos of your own nail work.</p></div>
-  <div class="gallery"><div class="gallery-item">💅🏻</div><div class="gallery-item">🌸</div><div class="gallery-item">✨</div><div class="gallery-item">💗</div><div class="gallery-item">🤍</div><div class="gallery-item">🎀</div></div>
+  <div class="section-head">
+    <div class="eyebrow">Nail inspo</div>
+    <h2>Gallery ♡</h2>
+    <p>Replace these sample tiles with photos of your own nail work.</p>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-item">💅🏻</div>
+    <div class="gallery-item">🌸</div>
+    <div class="gallery-item">✨</div>
+    <div class="gallery-item">💗</div>
+    <div class="gallery-item">🤍</div>
+    <div class="gallery-item">🎀</div>
+  </div>
 </section>
+
 <section class="contact" id="contact">
-  <div class="eyebrow">Your next set awaits</div><h2 style="font:normal 36px Georgia,serif;margin:8px 0">Let’s get your nails done ♡</h2><p>Message me on Facebook to ask about services, prices, and available appointments.</p>
-  <!-- Replace YOUR_FACEBOOK_PAGE_LINK with your actual Facebook page or Messenger link -->
-  
+  <div class="eyebrow">Your next set awaits</div>
+  <h2 style="font:normal 36px Georgia,serif;margin:8px 0">
+    Let’s get your nails done ♡
+  </h2>
 
-<a class="btn" href="https://www.facebook.com/p/Nails-by-Amanda-61579506603779/" target="_blank" rel="noopener">Visit Facebook Page ↗</a>
+  <p>Message me on Facebook to ask about services, prices, and available appointments.</p>
 
+  <a class="btn"
+     href="https://www.facebook.com/p/Nails-by-Amanda-61579506603779/"
+     target="_blank"
+     rel="noopener">
+    Visit Facebook Page ↗
+  </a>
 
-  <p class="note">Before sharing this website, update the Messenger button with your page’s actual link.</p>
+  <p class="note">Contact us on Facebook for inquiries and appointments.</p>
 </section>
+
 </main>
-<footer>AG Glam Nails · Nails by Amanda ♡<br>Pretty nails, happy you.</footer>
+
+<footer>
+  AG Glam Nails · Nails by Amanda ♡<br>
+  Pretty nails, happy you.
+</footer>
+
 </div>
 </body>
 </html>
