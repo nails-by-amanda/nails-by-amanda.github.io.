@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AG Glam Nails | Nails by Amanda</title>
+<title>Nails by Amanda</title>
 
 <style>
 :root {
@@ -12,10 +12,9 @@
   --site-secondary: #f6e2e3;
   --site-background: #fffaf8;
   --site-on-primary: #ffffff;
-  --site-on-secondary: #4a2930;
   --site-on-background: #33272a;
   --site-font-body: Arial, Helvetica, sans-serif;
-  --site-font-heading: Georgia, 'Times New Roman', serif;
+  --site-font-heading: Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -88,12 +87,6 @@ nav a:hover {
   background: #985765;
 }
 
-.btn.secondary {
-  background: transparent;
-  color: var(--site-primary);
-  border: 1px solid var(--site-primary);
-}
-
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -128,8 +121,9 @@ nav a:hover {
 .hero-art {
   min-height: 270px;
   border-radius: 48% 48% 24px 24px;
-  background: radial-gradient(ellipse at 55% 35%, #fffaf9 0 14%, transparent 15%),
-              linear-gradient(145deg, #e5b6b7, #f8dedd 45%, #c98791);
+  background:
+    radial-gradient(ellipse at 55% 35%, #fffaf9 0 14%, transparent 15%),
+    linear-gradient(145deg, #e5b6b7, #f8dedd 45%, #c98791);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,13 +137,13 @@ nav a:hover {
   transform: rotate(-12deg);
 }
 
-.hero-art:after {
-  content: "AG ♡";
+.hero-art::after {
+  content: "Nails by Amanda ♡";
   position: absolute;
   bottom: 18px;
   right: 20px;
   color: #fff8f7;
-  font: italic 24px var(--site-font-heading);
+  font: italic 20px var(--site-font-heading);
 }
 
 section {
@@ -173,7 +167,7 @@ section {
 
 .services {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   max-width: 1000px;
   margin: auto;
@@ -185,6 +179,7 @@ section {
   border-radius: 18px;
   padding: 22px;
   text-align: center;
+  min-width: 0;
 }
 
 .service .symbol {
@@ -208,7 +203,6 @@ section {
   color: #8f4e5c;
 }
 
-/* Clickable Gel Manicure card */
 .service-link {
   display: block;
   color: inherit;
@@ -233,7 +227,7 @@ section {
 .about {
   background: #faeeee;
   display: grid;
-  grid-template-columns: .9fr 1.1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 35px;
   align-items: center;
 }
@@ -275,7 +269,7 @@ section {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
@@ -353,7 +347,7 @@ footer {
   }
 
   .services {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .about {
@@ -365,7 +359,7 @@ footer {
   }
 
   .gallery {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gallery-item {
@@ -390,7 +384,6 @@ footer {
 </head>
 
 <body>
-<div id="app">
 
 <header>
   <a href="#home" style="text-decoration:none">
@@ -423,55 +416,60 @@ footer {
   </div>
 </section>
 
+<section id="services">
+  <div class="section-head">
+    <div class="eyebrow">A little self-care</div>
+    <h2>Our Nail Services ♡</h2>
+    <p>Choose your favorite service and message to ask about availability.</p>
+  </div>
 
-<div class="services">
+  <div class="services">
 
-  <a href="gel-manicure.html" class="service service-link">
-    <div class="symbol">♡</div>
-    <h3>Gel Manicure</h3>
-    <p>Neat nails with a glossy, long-lasting finish.</p>
-    <div class="price">Price upon inquiry</div>
-    <p class="view-designs">View Designs →</p>
-  </a>
+    <a href="gel-manicure.html" class="service service-link">
+      <div class="symbol">♡</div>
+      <h3>Gel Manicure</h3>
+      <p>Neat nails with a glossy, long-lasting finish.</p>
+      <div class="price">Price upon inquiry</div>
+      <p class="view-designs">View Designs →</p>
+    </a>
 
-  <a href="hardgel-pedicure.html" class="service service-link">
-    <div class="symbol">✧</div>
-    <h3>Hardgel/Gel Pedicure</h3>
-    <p>A fresh, polished look for your toes.</p>
-    <div class="price">Price upon inquiry</div>
-    <p class="view-designs">View Designs →</p>
-  </a>
+    <a href="hardgel-pedicure.html" class="service service-link">
+      <div class="symbol">✧</div>
+      <h3>Hardgel/Gel Pedicure</h3>
+      <p>A fresh, polished look for your toes.</p>
+      <div class="price">Price upon inquiry</div>
+      <p class="view-designs">View Designs →</p>
+    </a>
 
-  <article class="service">
-    <div class="symbol">✿</div>
-    <h3>Soft Gel Extensions</h3>
-    <p>Extra length for your dream nail set.</p>
-    <div class="price">Price upon inquiry</div>
-  </article>
+    <article class="service">
+      <div class="symbol">✿</div>
+      <h3>Soft Gel Extensions</h3>
+      <p>Extra length for your dream nail set.</p>
+      <div class="price">Price upon inquiry</div>
+    </article>
 
-  <article class="service">
-    <div class="symbol">✧</div>
-    <h3>Hard Gel Manicure</h3>
-    <p>From simple details to cute statement designs.</p>
-    <div class="price">Price upon inquiry</div>
-  </article>
+    <article class="service">
+      <div class="symbol">✧</div>
+      <h3>Hard Gel Manicure</h3>
+      <p>From simple details to cute statement designs.</p>
+      <div class="price">Price upon inquiry</div>
+    </article>
 
-  <article class="service">
-    <div class="symbol">♡</div>
-    <h3>Nail Removal</h3>
-    <p>Ask about repair options for a chipped or broken nail.</p>
-    <div class="price">Price upon inquiry</div>
-  </article>
+    <article class="service">
+      <div class="symbol">♡</div>
+      <h3>Nail Removal</h3>
+      <p>Ask about repair options for a chipped or broken nail.</p>
+      <div class="price">Price upon inquiry</div>
+    </article>
 
-  <article class="service">
-    <div class="symbol">＋</div>
-    <h3>Custom Set</h3>
-    <p>Have an inspiration photo? Send it to Amanda.</p>
-    <div class="price">Message for a quote</div>
-  </article>
+    <article class="service">
+      <div class="symbol">＋</div>
+      <h3>Custom Set</h3>
+      <p>Have an inspiration photo? Send it to Amanda.</p>
+      <div class="price">Message for a quote</div>
+    </article>
 
-</div>
-
+  </div>
 
   <p class="note">Service list and prices can be edited to match your actual menu.</p>
 </section>
@@ -532,10 +530,9 @@ footer {
 </main>
 
 <footer>
-  AG Glam Nails · Nails by Amanda ♡<br>
+  Nails by Amanda ♡<br>
   Pretty nails, happy you.
 </footer>
 
-</div>
 </body>
 </html>
